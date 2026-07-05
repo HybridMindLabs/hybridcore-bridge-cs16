@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+# AMXX version + external include used for the best-effort compile step.
+# Adjust AMXX_URL if the pinned build ever 404s.
+env:
+  AMXX_URL: "https://www.amxmodx.org/release/amxmodx-1.10.0-git1150-base-linux.tar.gz"
+  EASY_HTTP_INC: "https://raw.githubusercontent.com/Fyren-yt/easy_http/master/scripting/include/easy_http.inc"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # ── Best-effort compile (.sma -> .amxx) ───────────────────
+      - name: Install 32-bit runtime (amxxpc is 32-bit)
+        continue-on-error: true
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y lib32stdc++6 lib32z1
+
+      - name: Fetch AMX Mod X + easy_http include
+        id: fetch
+        continue-on-error: true
+        run: |
+          set -e
+          curl -fsSL -o amxx.tar.gz "$AMXX_URL"
+          mkdir -p amxx && tar xzf amxx.tar.gz -C amxx
+          INC="amxx/addons/amxmodx/scripting/include"
+          curl -fsSL -o "$INC/easy_http.inc" "$EASY_HTTP_INC"
+
+      - name: Compile
+        id: compile
+        continue-on-error: true
+        run: |
+          set -e
+          SCR="amxx/addons/amxmodx/scripting"
+          cp addons/amxmodx/scripting/hybridcore_bridge.sma "$SCR/"
+          cd "$SCR"
+          chmod +x amxxpc
+          ./amxxpc hybridcore_bridge.sma
+          # amxxpc writes to compiled/ on newer builds, or cwd on older ones.
+          find . -name 'hybridcore_bridge.amxx' -exec cp {} "$GITHUB_WORKSPACE/hybridcore_bridge.amxx" \;
+
+      # ── Package (always) ──────────────────────────────────────
+      - name: Package
+        run: |
+          mkdir -p out/addons/amxmodx/scripting out/addons/amxmodx/configs/hybridcore
+          cp addons/amxmodx/scripting/hybridcore_bridge.sma out/addons/amxmodx/scripting/
+          cp addons/amxmodx/configs/hybridcore/config.cfg out/addons/amxmodx/configs/hybridcore/
+          # Include the compiled plugin if the compile step produced one.
+          if [ -f hybridcore_bridge.amxx ]; then
+            mkdir -p out/addons/amxmodx/plugins
+            cp hybridcore_bridge.amxx out/addons/amxmodx/plugins/
+          fi
+          cp README.md LICENSE out/
+          cd out && zip -r ../hybridcore-bridge-cs16.zip .
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            hybridcore-bridge-cs16.zip
+            hybridcore_bridge.amxx
+          fail_on_unmatched_files: false
+          generate_release_notes: true
