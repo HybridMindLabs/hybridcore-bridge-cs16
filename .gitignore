@@ -1,7 +1,9 @@
-# AMXX compiler output
+# AMXX compiler scratch output
 compiled/
 *.amx
-*.amxx
+
+# The shipped, committed plugin binary is kept in the repo:
+#   addons/amxmodx/plugins/hybridcore_bridge.amxx
 
 # Runtime data written by the plugin
 addons/amxmodx/data/hc_bridge_*.json
