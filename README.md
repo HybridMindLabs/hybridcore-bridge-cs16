@@ -21,7 +21,7 @@ Authenticated with a per-server bearer token (`hcb_…`).
 ## Requirements
 
 - **AMX Mod X 1.9+** (for the built-in JSON natives)
-- **[EasyHTTP](https://github.com/Fyren-yt/easy_http)** module (`easy_http`) installed and loaded
+- **[EasyHTTP]([https://github.com/Fyren-yt/easy_http](https://github.com/Next21Team/AmxxEasyHttp))** module (`easy_http`) installed and loaded
 - HybridCore **≥ 0.2.0** on the site side
 
 ## Installation
