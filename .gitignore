@@ -1,0 +1,13 @@
+# AMXX compiler output
+compiled/
+*.amx
+*.amxx
+
+# Runtime data written by the plugin
+addons/amxmodx/data/hc_bridge_*.json
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
