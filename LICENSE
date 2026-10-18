@@ -1,30 +1,51 @@
-HybridCore Bridge (CS 1.6) — Proprietary License
+PolyForm Noncommercial License 1.0.0
 
-Copyright (c) HybridMind Labs. All rights reserved.
+https://polyformproject.org/licenses/noncommercial/1.0.0
 
-This plugin and its source code (the "Software") are the property of HybridMind
-Labs and are protected by copyright and other intellectual property laws. The
-Software is an official companion plugin for HybridCore.
+Copyright (c) 2026 Enriko 'HybridMind' Todorov / HybridMind Labs / HybridMarket.ORG. All rights reserved.
 
-1. Grant of Use
-   A valid license entitles the licensee to install and run the Software on
-   their own game servers for their own gaming community or organization, and to
-   modify it for that community's own use.
+1. Purpose
+   This license allows you to use, modify, and distribute this software for noncommercial purposes,
+   including running and self-hosting it for your own gaming communities and non-profit projects.
 
-2. Restrictions
-   Without the prior written permission of HybridMind Labs, you may NOT:
-   - redistribute, resell, sublicense, rent, lease, or lend the Software or any
-     part of it, in original or modified form;
-   - remove or alter any copyright, trademark, or proprietary notices.
+2. Agreement
+   In order to receive this license, you have to agree to its rules. The rules of this license are
+   both terms of your agreement with the licensor and conditions to your license.
 
-3. No Warranty
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+3. Notices
+   You must ensure that anyone who gets a copy of any part of this software from you also gets a
+   copy of this license and the copyright notice above.
 
-4. Limitation of Liability
-   IN NO EVENT SHALL HYBRIDMIND LABS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
-   LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-   OR OTHER DEALINGS IN THE SOFTWARE.
+4. Noncommercial Purpose
+   You may NOT sell, resell, rent, sublicense, or distribute this software or modified versions
+   thereof for any commercial fee or consideration, nor may you offer this software as a commercial
+   managed software-as-a-service (SaaS) or hosted platform product to third parties.
 
-For licensing inquiries and permissions, contact HybridMind Labs.
+   Permitted Community Use: Operating your own gaming community, accepting player donations,
+   charging for in-game VIP/memberships, and operating an in-game server store on your own
+   instance is explicitly recognized as community operations and permitted.
+
+5. Extension & Theme Ecosystem Exception
+   You are expressly permitted to develop, distribute, and commercially license (paid or free)
+   third-party extensions, plugins, and themes created for this software:
+   - Third-party extensions and themes remain the exclusive intellectual property of their creators.
+   - Authors may sell or distribute their extensions and themes under any license of their choice
+     (including commercial sales via HybridMarket.ORG or other distribution channels).
+   - Extensions and themes may not bundle or redistribute the core software itself.
+
+6. Fair Use
+   You may do anything with this software that is permitted by copyright law as fair use, fair
+   dealing, or another exception to copyright protection.
+
+7. Intellectual Property & Reservation of Rights
+   Full copyright, title, trademarks, and intellectual property rights in and to this software
+   remain exclusively with Enriko 'HybridMind' Todorov, HybridMind Labs, and HybridMarket.ORG.
+
+8. No Other Rights
+   Any use of this software that is not expressly permitted by this license requires a separate,
+   prior written license from the licensor.
+
+9. Disclaimer of Warranties
+   As far as the law allows, the software comes as is, without any warranty or condition, and no
+   licensor will be liable to anyone for any damages related to the software or this license, under
+   any kind of legal claim.
